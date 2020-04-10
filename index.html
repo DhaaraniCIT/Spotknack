@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotkanck</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </script>
+    </head>
+  <body style="background-color:#ebfaeb">
+    <div class="ui segment">
+      <div class="ui celled grid " style="outline: none;
+      border-style: none">
+        <div class="row">
+          <div class="three wide column" style="background:#e6e6e6">
+            <i class="green big shipping fast icon"></i>
+            <i class="samll bell icon" style="float:right"></i>
+          </div>
+          <div class="thirteen wide column " style="height:auto">
+            <div class="ui search">
+              <div class="ui left icon input">
+                <input type="text" placeholder="Search" style="width: 70%;outline: none;border-style: none;">
+                <i class="search icon"></i>
+              </div>
+              <div style="float:right;padding-top:10px;">
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+                <small style="color:#33cc33;font-weight: bold;padding-right:15px;">Meat</small>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+                <small style="color:#33cc33;font-weight: bold;padding-right:15px;">Vegan</small>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+                <small style="color:#33cc33;font-weight: bold;padding-right:15px;">Gluten Free</small>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="three wide column" style="background:#e6e6e6">
+            <div id="app">
+              <div class="image">
+                <img v-bind:src="image" class="ui tiny circular image">
+                <h2>Hello {{name}}</h2>
+                <h4>Your plan:<small style="color:green;font-size:15px">{{plan}}</small>&nbsp&nbsp&nbsp<i class="pencil alternate icon"></i></h4>
+                <button class="ui green right labeled icon button">
+                  <i class="white plus icon"></i>
+                  Create new meal
+                </button>
+              </div>
+            </div><br>
+            <small style="font-size: 15px;">Menu</small>
+            <div class="vertical-menu">
+              <a ><i class="history icon" style="float:left"></i>Overall</a>
+              <a ><i class="apple icon" style="float:left"></i>Meal</a>
+              <a ><i class="address book icon" style="float:left"></i>User account</a>
+              <a ><i class="clone icon" style="float:left"></i>Order history</a>
+              <a ><i class="calendar outline icon" style="float:left"></i>Calender</a>
+            </div><br>
+            <small style="font-size: 15px;">Communication</small>
+            <div class="vertical-menu">
+              <a ><i class="clipboard outline icon" style="float:left"></i>Review</a>
+              <a ><i class="address book icon" style="float:left"></i>User Recipies</a>
+            </div><br>
+            <div class="vertical-menu"><a >
+              <i class="power off icon" style="float:left"></i>log out
+            </a></div>
+            <!--<div class="ui borderless small vertical menu" style="background:#e6e6e6;width: 100%;outline: none;border-style: none;">
+              <div class="item" style="font-size: 15px;">
+                Menu
+                <div class="menu">
+                  <a class="item" style="font-size: 20px;"><i class="history icon" style="float:left"></i>Overall</a>
+                  <a class="item" style="font-size: 20px;"><i class="apple icon" style="float:left"></i>Meal</a>
+                  <a class="item" style="font-size: 20px;"><i class="address book icon" style="float:left"></i>User account</a>
+                  <a class="item" style="font-size: 20px;"><i class="clone icon" style="float:left"></i>Order history</a>
+                  <a class="item" style="font-size: 20px;"><i class="calendar outline icon" style="float:left"></i>Calender</a>
+                </div>
+              </div>
+              <div class="item" style="font-size: 15px;">
+                Communication
+                <div class="menu">
+                  <a class="item" style="font-size: 20px;"><i class="clipboard outline icon" style="float:left"></i>Review</a>
+                  <a class="item" style="font-size: 20px;"><i class="address book icon" style="float:left"></i>User Recipies</a>
+                </div>
+              </div>
+              <a class="item" style="font-size: 20px;">
+                <i class="power off icon" style="float:left"></i>log out
+              </a>
+            </div>-->
+          </div>
+          <div class="ten wide column" style="padding: 30px;">
+            <strong style="font-size: 30px;">Today's Options</strong>
+            <div style="float:right">
+              <button class="ui olive button">Compare meals</button><button class="ui right labeled icon button">
+                <i class="sort amount up icon"></i>
+                Filter
+              </button>
+              <button class="ui basic compact icon button" style="border-style: none;outline: none;"><i class="ellipsis horizontal icon"></i></button>
+            </div>
+            <h5 class="ui header">Drag & drop meals to your list &nbsp&nbsp<i class="question circle outline icon"></i></h5>
+            <div class="ui green secondary pointing menu">
+              <a class="active item" href="#">
+                All cuisines
+              </a>
+              <a class="item" href="#">
+                Italian
+              </a>
+              <a class="item" href="#">
+                Greek
+              </a>
+              <a class="item" href="#">
+                Thai
+              </a>
+              <a class="item" href="#">
+                Chinese
+              </a>
+              <a class="item" href="#">
+                Indian
+              </a>
+              <a class="item" href="#">
+                cajun
+              </a>
+              <div class="right menu">
+                <a class="ui item">
+                  <label for="cars" >Sort by:</label>
+                  <select id="cars" style="outline: none;border-style: none">
+                    <option value="price">price</option>
+                    <option value="Kcal">Kcal</option>
+                    <option value="ingridien">Ingridien</option>
+                  </select>
+                </a>
+              </div>
+            </div>
+            <div class="ui segment" draggable="true" ondragstart="drag(event)">
+              <div id="drag">
+                <div class="ui grid">
+                  <div class="row">
+                    <div class="three wide column">
+                      <img v-bind:src="image" class="ui top aligned small image">
+                    </div>
+                    <div class="thirteen wide column">
+                      <h1 class="ui header">{{product}}
+                      <i style="float:right">{{price}}</i></h1>
+                      <i class="ui header">{{description}}</i>
+                      <img class="ui mini circular image" v-bind:src="ingridien"><i class="olive plus circle icon" style="float:right;font-size:35px"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui segment" draggable="true" ondragstart="drag(event)">
+              <div id="drag1">
+                <div class="ui grid">
+                  <div class="row">
+                    <div class="three wide column">
+                      <img v-bind:src="image" class="ui top aligned small image">
+                    </div>
+                    <div class="thirteen wide column">
+                      <h1 class="ui header">{{product}}
+                      <i style="float:right">{{price}}</i></h1>
+                      <i class="ui header">{{description}}</i><br>
+                        <img v-bind:src="ingridien" class="imgs">
+                        <img v-bind:src="ingridien1" class="imgs"><br>
+                      <i class=" olive plus circle icon" style="float:right;font-size:35px"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui segment" draggable="true" ondragstart="drag(event)">
+              <div id="drag2">
+                <div class="ui grid">
+                  <div class="row">
+                    <div class="three wide column">
+                      <img v-bind:src="image" class="ui top aligned small image">
+                    </div>
+                    <div class="thirteen wide column">
+                      <h1 class="ui header">{{product}}
+                      <i style="float:right">{{price}}</i></h1>
+                      <i class="ui header">{{description}}</i><br>
+
+                        <img v-bind:src="ingridien" class="imgs">
+                        <img v-bind:src="ingridien1" class="imgs"><i class=" olive plus circle icon" style="float:right;font-size:35px"></i>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column" style="color:#b3b3b3">
+            <h1 class="ui header" style="color:black">Create Your <br>
+               meal plan</h1>
+               for <span class="output"></span> &nbsp&nbsp<i class="calendar outline icon"></i>
+               <script type="text/javascript">
+               let dateObj = new Date();
+               var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+               var month = months[dateObj.getMonth()];
+               let day = String(dateObj.getDate()).padStart(2, '0');
+               let year = dateObj.getFullYear();
+               let output = day + ' ' + month + ' ' + year;
+
+                  document.querySelector('.output').textContent
+                          = output;
+               </script><br>
+               <h5>Breakfast</h5>
+               <div class="ui segment" draggable="true" ondragstart="drag(event)">
+                 <div id="side">
+                   <div class="ui grid">
+                     <div class="row">
+                       <div class="three wide column">
+                         <img v-bind:src="image" class="ui top aligned big image">
+                       </div>
+                       <div class="thirteen wide column">
+                         <h5 class="ui header">{{product}}
+                         <i style="float:right">{{price}}</i></h5>
+                         <h5 class="ui header">{{description}}
+                         <a><i class="close icon" id="hidee" style="float:right"></i></a></h5>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <h5>Lunch</h5>
+               <div class="ui segment" draggable="true" ondragstart="drag(event)">
+                 <div id="side1">
+                   <div class="ui grid">
+                     <div class="row">
+                       <div class="three wide column">
+                         <img v-bind:src="image" class="ui top aligned big image">
+                       </div>
+                       <div class="thirteen wide column">
+                         <h5 class="ui header">{{product}}
+                         <i style="float:right">{{price}}</i></h5>
+                         <h5 class="ui header">{{description}}
+                         <a><i class="close icon" id="hide" style="float:right"></i></a></h5>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="ui equal width grid">
+                 <div class="row">
+                  <div class="column">
+                    <hr style="border: 3px solid green;width:100%">
+                  </div>
+                  <div class="column">
+                    <center><i class="green plus icon"></i></center>
+                  </div>
+                  <div class="column">
+                    <hr style="border: 3px solid green;width:100%">
+                  </div>
+                </div>
+              </div>
+              <h5>Dinner</h5>
+              <div class="box" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Drop to add
+              </div><br><br><br>
+              <div class="ui big labeled button" tabindex="0" style="padding: 10px;">
+                <div class="ui green button">
+                Save Meals and pay
+                </div>
+                <a class="ui small green label">
+                  $7.28
+                </a>
+              </div>
+              <div class="ui icon buttons" style="padding-top: 20px;" >
+                <button class="ui button"><i class="align left red credit card icon"></i></button>
+                <button class="ui button" >Payment
+                  <h4>Master Card **** 4032</h4>
+                </button>
+                <button class="ui button"><i class="align right pencil alternate icon"></i></button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+       $(document).ready(function(){
+         $("#hide").click(function(){
+           $("#side1").hide();
+         });
+         $("#hidee").click(function(){
+           $("#side").hide();
+         });
+       });
+       </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+      el:'#app',
+      data:{
+        image:'image/face.jpg',
+        name:'Maciej',
+        plan:'Free'
+      }
+    })
+
+    var drag = new Vue({
+      el: '#drag',
+      data: {
+        product: 'Chinese meat dumbling',
+        image: 'image/du.jpg',
+        description: '672 calaries per portion',
+        price: '$5,99',
+        ingridien:'image/meat.jpg'
+      }
+    })
+    var drag1 = new Vue({
+      el: '#drag1',
+      data: {
+        product: 'Bio Musli with Peach',
+        image: 'image/peach.jpg',
+        description: '348 calaries per portion',
+        price: '$3,49',
+        ingridien:'image/d.png',
+        ingridien1:'image/dd.jpg'
+      }
+    })
+    var drag2 = new Vue({
+      el: '#drag2',
+      data: {
+        product: 'Fresh Sandwich with Hum',
+        image: 'image/image.png',
+        description: '552 calaries per porsion',
+        price: '$4,29',
+        ingridien:'image/meat.jpg',
+        ingridien1:'image/bread.jpeg'
+      }
+    })
+    function allowDrop(ev) {ev.preventDefault();}
+    function drag(ev) {ev.dataTransfer.setData("text/html", ev.target.id);}
+    function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text/html");
+    ev.target.appendChild(document.getElementById(data));
+    }
+    var side = new Vue({
+      el: '#side',
+      data: {
+        product: 'TomatoOmelette',
+        image: 'image/tomato.jpg',
+        description: '489 kcal',
+        price: '$4,99',
+      }
+    })
+    var side1 = new Vue({
+      el: '#side1',
+      data: {
+        product: 'Fruit Yoghurt',
+        image: 'image/yogurt.jpg',
+        description: '489 kcal',
+        price: '$2,29',
+      }
+    })
+    </script>
+    <script src = "js/main.js">
+  </body>
+</html>
