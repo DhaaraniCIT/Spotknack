@@ -12,16 +12,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </script>
     </head>
-  <body style="background-color:#ebfaeb">
-    <div class="ui segment">
+  <body >
+    <div class="ui segment" >
       <div class="ui celled grid " style="outline: none;
       border-style: none">
         <div class="row">
-          <div class="three wide column" style="background:#e6e6e6">
+          <div class="sixteen wide mobile eight wide tablet three wide computer column" style="background:#e6e6e6">
             <i class="green big shipping fast icon"></i>
             <i class="samll bell icon" style="float:right"></i>
           </div>
-          <div class="thirteen wide column " style="height:auto">
+          <div class="sixteen wide mobile eight wide tablet thirteen wide computer column " style="height:auto">
             <div class="ui search">
               <div class="ui left icon input">
                 <input type="text" placeholder="Search" style="width: 70%;outline: none;border-style: none;">
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="three wide column" style="background:#e6e6e6">
+          <div class="sixteen wide mobile eight wide tablet three wide computer column" style="background:#e6e6e6">
             <div id="app">
               <div class="image">
                 <img v-bind:src="image" class="ui tiny circular image">
@@ -99,7 +99,7 @@
               </a>
             </div>-->
           </div>
-          <div class="ten wide column" style="padding: 30px;">
+          <div class="sixteen wide mobile eight wide tablet ten wide computer column" style="padding: 30px;">
             <strong style="font-size: 30px;">Today's Options</strong>
             <div style="float:right">
               <button class="ui olive button">Compare meals</button><button class="ui right labeled icon button">
@@ -110,25 +110,25 @@
             </div>
             <h5 class="ui header">Drag & drop meals to your list &nbsp&nbsp<i class="question circle outline icon"></i></h5>
             <div class="ui green secondary pointing menu">
-              <a class="active item" href="#">
+              <a class="active item" href="#main_body">
                 All cuisines
               </a>
-              <a class="item" href="#">
+              <a class="item" href="#main_body">
                 Italian
               </a>
-              <a class="item" href="#">
+              <a class="item" href="#main_body">
                 Greek
               </a>
-              <a class="item" href="#">
+              <a class="item" href="#main_body">
                 Thai
               </a>
-              <a class="item" href="#">
+              <a class="item" href="#main_body">
                 Chinese
               </a>
-              <a class="item" href="#">
+              <a class="item" href="#main_body">
                 Indian
               </a>
-              <a class="item" href="#">
+              <a class="item" href="#main_body">
                 cajun
               </a>
               <div class="right menu">
@@ -142,6 +142,7 @@
                 </a>
               </div>
             </div>
+            <div id="main_body">
             <div class="ui segment" draggable="true" ondragstart="drag(event)">
               <div id="drag">
                 <div class="ui grid">
@@ -199,7 +200,8 @@
               </div>
             </div>
           </div>
-          <div class="three wide column" style="color:#b3b3b3">
+        </div>
+          <div class="sixteen wide mobile eight wide tablet three wide computer column" style="color:#b3b3b3">
             <h1 class="ui header" style="color:black">Create Your <br>
                meal plan</h1>
                for <span class="output"></span> &nbsp&nbsp<i class="calendar outline icon"></i>
@@ -297,74 +299,6 @@
        });
        </script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script type="text/javascript">
-    var app = new Vue({
-      el:'#app',
-      data:{
-        image:'image/face.jpg',
-        name:'Maciej',
-        plan:'Free'
-      }
-    })
-
-    var drag = new Vue({
-      el: '#drag',
-      data: {
-        product: 'Chinese meat dumbling',
-        image: 'image/du.jpg',
-        description: '672 calaries per portion',
-        price: '$5,99',
-        ingridien:'image/meat.jpg'
-      }
-    })
-    var drag1 = new Vue({
-      el: '#drag1',
-      data: {
-        product: 'Bio Musli with Peach',
-        image: 'image/peach.jpg',
-        description: '348 calaries per portion',
-        price: '$3,49',
-        ingridien:'image/d.png',
-        ingridien1:'image/dd.jpg'
-      }
-    })
-    var drag2 = new Vue({
-      el: '#drag2',
-      data: {
-        product: 'Fresh Sandwich with Hum',
-        image: 'image/image.png',
-        description: '552 calaries per porsion',
-        price: '$4,29',
-        ingridien:'image/meat.jpg',
-        ingridien1:'image/bread.jpeg'
-      }
-    })
-    function allowDrop(ev) {ev.preventDefault();}
-    function drag(ev) {ev.dataTransfer.setData("text/html", ev.target.id);}
-    function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text/html");
-    ev.target.appendChild(document.getElementById(data));
-    }
-    var side = new Vue({
-      el: '#side',
-      data: {
-        product: 'TomatoOmelette',
-        image: 'image/tomato.jpg',
-        description: '489 kcal',
-        price: '$4,99',
-      }
-    })
-    var side1 = new Vue({
-      el: '#side1',
-      data: {
-        product: 'Fruit Yoghurt',
-        image: 'image/yogurt.jpg',
-        description: '489 kcal',
-        price: '$2,29',
-      }
-    })
-    </script>
-    <script src = "js/main.js">
+    <script src = "js/main.js"></script>
   </body>
 </html>
